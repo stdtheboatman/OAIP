@@ -25,6 +25,10 @@ private slots:
 
     void on_orderDoButton_clicked();
 
+    void on_orderGetByIdButton_clicked();
+
+    void on_ordersGetByDateButton_clicked();
+
 private:
     Ui::MainWindow *ui;
 

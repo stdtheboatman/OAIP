@@ -3,6 +3,7 @@
 
 #include <QList>
 #include "order.h"
+#include "mylist.h"
 
 class List
 {
@@ -11,20 +12,23 @@ public:
 
     void add(Order value);
 
-    void addUniq(Order value);
+    bool addUniq(Order value);
 
     bool isUniq(Order value);
 
-    void del(int index);
+    bool del(int index);
 
     QString toString();
 
     int getOrderIndexById(int id);
 
+    MyList<int> getOrderIndexesByDate(QString date);
+
     Order getOderByIndex(int index);
 
+
 private:
-    QList <Order> list;
+    MyList <Order> list;
 };
 
 #endif // LIST_H

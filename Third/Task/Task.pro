@@ -12,11 +12,15 @@ SOURCES += \
     list.cpp \
     main.cpp \
     mainwindow.cpp \
+    messageboxandinputcontrol.cpp \
+    mylist.cpp \
     order.cpp
 
 HEADERS += \
     list.h \
     mainwindow.h \
+    messageboxandinputcontrol.h \
+    mylist.h \
     order.h
 
 FORMS += \

@@ -51,6 +51,17 @@ public:
     QLabel *label_5;
     QPushButton *orderDeleteButton;
     QLineEdit *orderIdToDeletInput;
+    QSplitter *splitter_2;
+    QWidget *gridLayoutWidget_6;
+    QGridLayout *gridLayout_6;
+    QPushButton *orderGetByIdButton;
+    QLineEdit *orderIdToGetInput;
+    QLabel *label_6;
+    QWidget *gridLayoutWidget_7;
+    QGridLayout *gridLayout_7;
+    QLabel *label_7;
+    QPushButton *ordersGetByDateButton;
+    QLineEdit *orderDateToGetInput;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -203,6 +214,62 @@ public:
         gridLayout_5->addWidget(orderIdToDeletInput, 0, 1, 1, 1);
 
         splitter->addWidget(gridLayoutWidget_5);
+        splitter_2 = new QSplitter(centralwidget);
+        splitter_2->setObjectName(QString::fromUtf8("splitter_2"));
+        splitter_2->setGeometry(QRect(40, 420, 231, 101));
+        splitter_2->setOrientation(Qt::Horizontal);
+        gridLayoutWidget_6 = new QWidget(splitter_2);
+        gridLayoutWidget_6->setObjectName(QString::fromUtf8("gridLayoutWidget_6"));
+        gridLayout_6 = new QGridLayout(gridLayoutWidget_6);
+        gridLayout_6->setObjectName(QString::fromUtf8("gridLayout_6"));
+        gridLayout_6->setContentsMargins(0, 0, 0, 0);
+        orderGetByIdButton = new QPushButton(gridLayoutWidget_6);
+        orderGetByIdButton->setObjectName(QString::fromUtf8("orderGetByIdButton"));
+        sizePolicy3.setHeightForWidth(orderGetByIdButton->sizePolicy().hasHeightForWidth());
+        orderGetByIdButton->setSizePolicy(sizePolicy3);
+
+        gridLayout_6->addWidget(orderGetByIdButton, 1, 0, 1, 2);
+
+        orderIdToGetInput = new QLineEdit(gridLayoutWidget_6);
+        orderIdToGetInput->setObjectName(QString::fromUtf8("orderIdToGetInput"));
+        sizePolicy3.setHeightForWidth(orderIdToGetInput->sizePolicy().hasHeightForWidth());
+        orderIdToGetInput->setSizePolicy(sizePolicy3);
+
+        gridLayout_6->addWidget(orderIdToGetInput, 0, 1, 1, 1);
+
+        label_6 = new QLabel(gridLayoutWidget_6);
+        label_6->setObjectName(QString::fromUtf8("label_6"));
+        label_6->setAlignment(Qt::AlignCenter);
+
+        gridLayout_6->addWidget(label_6, 0, 0, 1, 1);
+
+        splitter_2->addWidget(gridLayoutWidget_6);
+        gridLayoutWidget_7 = new QWidget(splitter_2);
+        gridLayoutWidget_7->setObjectName(QString::fromUtf8("gridLayoutWidget_7"));
+        gridLayout_7 = new QGridLayout(gridLayoutWidget_7);
+        gridLayout_7->setObjectName(QString::fromUtf8("gridLayout_7"));
+        gridLayout_7->setContentsMargins(0, 0, 0, 0);
+        label_7 = new QLabel(gridLayoutWidget_7);
+        label_7->setObjectName(QString::fromUtf8("label_7"));
+        label_7->setAlignment(Qt::AlignCenter);
+
+        gridLayout_7->addWidget(label_7, 0, 0, 1, 1);
+
+        ordersGetByDateButton = new QPushButton(gridLayoutWidget_7);
+        ordersGetByDateButton->setObjectName(QString::fromUtf8("ordersGetByDateButton"));
+        sizePolicy3.setHeightForWidth(ordersGetByDateButton->sizePolicy().hasHeightForWidth());
+        ordersGetByDateButton->setSizePolicy(sizePolicy3);
+
+        gridLayout_7->addWidget(ordersGetByDateButton, 1, 0, 1, 2);
+
+        orderDateToGetInput = new QLineEdit(gridLayoutWidget_7);
+        orderDateToGetInput->setObjectName(QString::fromUtf8("orderDateToGetInput"));
+        sizePolicy3.setHeightForWidth(orderDateToGetInput->sizePolicy().hasHeightForWidth());
+        orderDateToGetInput->setSizePolicy(sizePolicy3);
+
+        gridLayout_7->addWidget(orderDateToGetInput, 0, 1, 1, 1);
+
+        splitter_2->addWidget(gridLayoutWidget_7);
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName(QString::fromUtf8("menubar"));
@@ -230,6 +297,10 @@ public:
         label_4->setText(QCoreApplication::translate("MainWindow", "Id", nullptr));
         label_5->setText(QCoreApplication::translate("MainWindow", "Id", nullptr));
         orderDeleteButton->setText(QCoreApplication::translate("MainWindow", "Delete", nullptr));
+        orderGetByIdButton->setText(QCoreApplication::translate("MainWindow", "Get order by id", nullptr));
+        label_6->setText(QCoreApplication::translate("MainWindow", "Id", nullptr));
+        label_7->setText(QCoreApplication::translate("MainWindow", "date", nullptr));
+        ordersGetByDateButton->setText(QCoreApplication::translate("MainWindow", "Get orders by date", nullptr));
     } // retranslateUi
 
 };

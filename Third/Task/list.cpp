@@ -3,16 +3,21 @@
 
 
 List::List() {
-
+    list.init();
 }
 
 void List::add(Order value) {
-    list.append(value);
+    qDebug() << list.size() << "\n";
+    list.add(value);
 }
 
-void List::addUniq(Order value) {
+bool List::addUniq(Order value) {
     if (isUniq(value)) {
-        list.append(value);
+        list.add(value);
+        return true;
+    }
+    else {
+        return false;
     }
 }
 
@@ -26,12 +31,13 @@ bool List::isUniq(Order value) {
     return true;
 }
 
-void List::del(int index) {
+bool List::del(int index) {
     if (index < 0 || index >= list.size()) {
-        return;
+        throw QString("can`t delete");
     }
 
-    list.remove(index);
+    list.del(index);
+    return true;
 }
 
 QString List::toString() {
@@ -51,6 +57,19 @@ int List::getOrderIndexById(int id) {
     }
 
     return -1;
+}
+
+MyList<int> List::getOrderIndexesByDate(QString date) {
+    MyList <int> result;
+    result.init();
+
+    for(int i = 0; i < list.size(); i++) {
+        if (list[i].getDate() == date) {
+            result.add(i);
+        }
+    }
+
+    return result;
 }
 
 Order List::getOderByIndex(int index) {
