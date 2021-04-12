@@ -33,8 +33,13 @@ public:
     QLineEdit *expressionInput;
     QWidget *gridLayoutWidget_2;
     QGridLayout *gridLayout_2;
-    QLabel *label_2;
     QLineEdit *expressionPostfixOutput;
+    QLabel *label_2;
+    QPushButton *solvePostfixExpressionButton;
+    QWidget *gridLayoutWidget_3;
+    QGridLayout *expressionResultGridLayout;
+    QLineEdit *expressionResultOutput;
+    QLabel *label_3;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -83,12 +88,6 @@ public:
         gridLayout_2 = new QGridLayout(gridLayoutWidget_2);
         gridLayout_2->setObjectName(QString::fromUtf8("gridLayout_2"));
         gridLayout_2->setContentsMargins(0, 0, 0, 0);
-        label_2 = new QLabel(gridLayoutWidget_2);
-        label_2->setObjectName(QString::fromUtf8("label_2"));
-        label_2->setAlignment(Qt::AlignCenter);
-
-        gridLayout_2->addWidget(label_2, 0, 0, 1, 1);
-
         expressionPostfixOutput = new QLineEdit(gridLayoutWidget_2);
         expressionPostfixOutput->setObjectName(QString::fromUtf8("expressionPostfixOutput"));
         QSizePolicy sizePolicy2(QSizePolicy::Preferred, QSizePolicy::Preferred);
@@ -99,6 +98,39 @@ public:
         expressionPostfixOutput->setReadOnly(true);
 
         gridLayout_2->addWidget(expressionPostfixOutput, 1, 0, 1, 1);
+
+        label_2 = new QLabel(gridLayoutWidget_2);
+        label_2->setObjectName(QString::fromUtf8("label_2"));
+        label_2->setAlignment(Qt::AlignCenter);
+
+        gridLayout_2->addWidget(label_2, 0, 0, 1, 1);
+
+        solvePostfixExpressionButton = new QPushButton(gridLayoutWidget_2);
+        solvePostfixExpressionButton->setObjectName(QString::fromUtf8("solvePostfixExpressionButton"));
+        sizePolicy.setHeightForWidth(solvePostfixExpressionButton->sizePolicy().hasHeightForWidth());
+        solvePostfixExpressionButton->setSizePolicy(sizePolicy);
+
+        gridLayout_2->addWidget(solvePostfixExpressionButton, 2, 0, 1, 1);
+
+        gridLayoutWidget_3 = new QWidget(centralwidget);
+        gridLayoutWidget_3->setObjectName(QString::fromUtf8("gridLayoutWidget_3"));
+        gridLayoutWidget_3->setGeometry(QRect(60, 390, 671, 101));
+        expressionResultGridLayout = new QGridLayout(gridLayoutWidget_3);
+        expressionResultGridLayout->setObjectName(QString::fromUtf8("expressionResultGridLayout"));
+        expressionResultGridLayout->setContentsMargins(0, 0, 0, 0);
+        expressionResultOutput = new QLineEdit(gridLayoutWidget_3);
+        expressionResultOutput->setObjectName(QString::fromUtf8("expressionResultOutput"));
+        sizePolicy1.setHeightForWidth(expressionResultOutput->sizePolicy().hasHeightForWidth());
+        expressionResultOutput->setSizePolicy(sizePolicy1);
+        expressionResultOutput->setReadOnly(true);
+
+        expressionResultGridLayout->addWidget(expressionResultOutput, 1, 0, 1, 1);
+
+        label_3 = new QLabel(gridLayoutWidget_3);
+        label_3->setObjectName(QString::fromUtf8("label_3"));
+        label_3->setAlignment(Qt::AlignCenter);
+
+        expressionResultGridLayout->addWidget(label_3, 0, 0, 1, 1);
 
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
@@ -120,6 +152,8 @@ public:
         label->setText(QCoreApplication::translate("MainWindow", "Expression", nullptr));
         solveExpressionButton->setText(QCoreApplication::translate("MainWindow", "Solve ", nullptr));
         label_2->setText(QCoreApplication::translate("MainWindow", "Postfix expression", nullptr));
+        solvePostfixExpressionButton->setText(QCoreApplication::translate("MainWindow", "Solve", nullptr));
+        label_3->setText(QCoreApplication::translate("MainWindow", "Result", nullptr));
     } // retranslateUi
 
 };

@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include <expressionsolver.h>
+#include <formgetvariables.h>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -18,8 +19,15 @@ public:
 
 private slots:
     void on_solveExpressionButton_clicked();
+    void on_solvePostfixExpressionButton_clicked();
+public slots:
+    void solveExpression(QMap<QChar, double> variables);
+
+signals:
+    void singalGetDataAboutVariables(QMap<QChar, double> variables);
 
 private:
     Ui::MainWindow *ui;
+    FormGetVariables *form;
 };
 #endif // MAINWINDOW_H

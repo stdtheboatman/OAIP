@@ -10,14 +10,17 @@ CONFIG += c++11
 
 SOURCES += \
     expressionsolver.cpp \
+    formgetvariables.cpp \
     main.cpp \
     mainwindow.cpp
 
 HEADERS += \
     expressionsolver.h \
+    formgetvariables.h \
     mainwindow.h
 
 FORMS += \
+    formgetvariables.ui \
     mainwindow.ui
 
 # Default rules for deployment.

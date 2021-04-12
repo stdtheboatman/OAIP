@@ -87,10 +87,12 @@ double ExpressionSolver::calculate(double a, double b, QChar operation) {
     throw 1000-7;
 }
 
-double ExpressionSolver::solveExpression(QString expression, std::map<QChar, double> valueOfVar) {
+double ExpressionSolver::solveExpression(QString expression, QMap<QChar, double> valueOfVar) {
     expression = getPostfixExpression(expression);
 
     std::stack <double> stack;
+
+    qDebug() << "ZXC? " << expression << "\n";
 
     for(auto sym : expression) {
         if (priority(sym) > 0) {
@@ -105,7 +107,7 @@ double ExpressionSolver::solveExpression(QString expression, std::map<QChar, dou
             stack.push(calculate(a, b, sym));
         }
 
-        if ('a' <= sym && sym <= 'z') {
+        if (sym.isLetter()) {
             stack.push(valueOfVar[sym]);
         }
     }

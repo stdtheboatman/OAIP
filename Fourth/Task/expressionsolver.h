@@ -4,9 +4,10 @@
 #include <iostream>
 #include <stack>
 #include <math.h>
-#include <map>
 
 #include <QString>
+#include <QMap>
+#include <QDebug>
 
 class ExpressionSolver
 {
@@ -19,7 +20,7 @@ public:
 
     static double calculate(double a, double b, QChar operation);
 
-    static double solveExpression(QString expression, std::map<QChar, double> valueOfvar);
+    static double solveExpression(QString expression, QMap<QChar, double> valueOfvar);
 };
 
 #endif // EXPRESSIONSOLVER_H
